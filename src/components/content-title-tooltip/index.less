@@ -1,0 +1,74 @@
+@import '~@/theme';
+
+.title {
+    font-size: 16px;
+    color: #000;
+    display: flex;
+    align-items: center;
+    // line-height: 32px;
+}
+
+.reset-tooltip {
+    color: red;
+}
+
+.tooltip-wrapper {
+    font-family: @font-family-PuHuiTi-Regular;
+}
+
+.tooltip-wrapper-title {
+    font-size: 16px;
+    font-family: @font-family-PuHuiTi-Bold;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.tooltip-wrapper-content {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+    text-indent: 26px;
+    white-space: pre-wrap;
+
+    &.no-text-indent {
+        text-indent: 0;
+    }
+}
+.color-wrapper {
+    margin: 8px 0;
+}
+.color-block {
+    display: flex;
+
+    margin: 8px 4px;
+    align-items: baseline;
+}
+
+.color-name {
+    width: 80px;
+    flex-shrink: 0;
+    color: rgba(0, 0, 0, 0.6);
+    text-align: right;
+}
+
+.color {
+    min-width: 60px;
+    padding: 0 12px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 4px;
+    text-align: center;
+    margin-left: 8px;
+    flex-shrink: 0;
+}
+
+.describe {
+    font-size: 12px;
+    font-family: Alibaba PuHuiTi-Regular, Alibaba PuHuiTi;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.45);
+}
+
+.legend-text {
+    font-size: 14px;
+    margin-left: 6px;
+    color: rgba(0, 0, 0, 0.6);
+}

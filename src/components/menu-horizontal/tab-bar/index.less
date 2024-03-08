@@ -1,0 +1,23 @@
+@import '~@/theme';
+
+.merge {
+    background-color: transparent;
+
+    :global {
+        .ant-tabs-nav {
+            padding: 0;
+            margin: 0 0 @basic-spacing 0;
+        }
+    }
+}
+
+.separate {
+    background-color: #fff;
+
+    :global {
+        .ant-tabs-nav {
+            padding: 0 @basic-spacing;
+            margin: 0;
+        }
+    }
+}

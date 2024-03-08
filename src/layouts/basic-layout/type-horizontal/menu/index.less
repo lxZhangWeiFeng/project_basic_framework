@@ -1,0 +1,45 @@
+@import '~@/theme';
+
+.menu {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 @basic-spacing 0 0;
+    color: #fff;
+    flex-grow: 1;
+    min-width: 0;
+
+    .logo {
+        flex-shrink: 1;
+
+        display: inline-flex;
+        align-items: center;
+        margin-right: 16px;
+        font-size: 20px;
+        font-weight: 500;
+        color: rgba(0, 0, 0, 0.85);
+        font-family: @font-family-PuHuiTi-Regular;
+    }
+
+    .item-box {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+        overflow-x: auto;
+        height: 100%;
+
+        &::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+            background-color: transparent;
+        }
+
+        :global {
+            .ant-menu-horizontal {
+                border-bottom: none;
+                width: 100%;
+                height: calc(~'100% - 2px');
+            }
+        }
+    }
+}

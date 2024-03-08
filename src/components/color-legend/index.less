@@ -1,0 +1,33 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid transparent;
+
+    .item {
+        flex-grow: 0;
+        flex-shrink: 0;
+        display: flex;
+        align-items: flex-start;
+        font-size: 12px;
+
+        .legend {
+            width: 8px;
+            height: 8px;
+            margin: 3px 6px 0 0;
+            flex-grow: 0;
+            flex-shrink: 0;
+        }
+
+        .value {
+            flex-grow: 0;
+            flex-shrink: 0;
+            line-height: 14px;
+            color: rgba(0, 0, 0, 0.65);
+
+            & > div + div {
+                margin-top: 5px;
+            }
+        }
+    }
+}

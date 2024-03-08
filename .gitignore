@@ -1,0 +1,15 @@
+node_modules
+
+dist
+
+.idea
+
+lib
+
+yarn-error.log
+
+.history
+
+.vscode
+
+.dccache

@@ -1,0 +1,186 @@
+@import '~@/theme';
+
+// 默认
+.default-wrapper {
+    .head {
+        height: 54px;
+        background-color: #fff;
+        padding: 0 @basic-spacing;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #f0f0f0;
+
+        .title {
+            display: inline-flex;
+            align-items: center;
+            font-size: 16px;
+            color: rgba(0, 0, 0, 0.85);
+            font-weight: 600;
+        }
+
+        .tab-title {
+            height: 100%;
+
+            :global {
+                .ant-tabs-nav {
+                    height: 100%;
+                    margin-bottom: 0;
+                }
+                .ant-tabs-nav::before {
+                    visibility: hidden;
+                }
+            }
+        }
+
+        .line {
+            width: 1px;
+            height: 16px;
+            margin-left: 16px;
+            background: rgba(0, 0, 0, 0.45);
+        }
+    }
+
+    .action {
+        display: flex;
+        align-items: center;
+
+        & > * + * {
+            margin-left: 16px;
+        }
+    }
+
+    .filter-wrapper {
+        overflow: hidden;
+        margin: 0 @basic-spacing;
+        max-height: 0;
+        transition: max-height 0.2s, margin 0.2s;
+        transition-timing-function: ease-in-out;
+
+        &.show {
+            margin: @basic-spacing @basic-spacing 0 @basic-spacing;
+            max-height: 240px;
+        }
+
+        .filter-margin-handle {
+            & > * {
+                margin: 8px;
+            }
+        }
+    }
+
+    .middle {
+        overflow: hidden;
+        max-height: 0;
+        margin: 0 @basic-spacing;
+        transition: max-height 0.2s, margin 0.2s;
+        transition-timing-function: ease-in-out;
+
+        &.show {
+            margin: @basic-spacing @basic-spacing 0 @basic-spacing;
+            max-height: 500px;
+        }
+    }
+
+    .content {
+        margin: @basic-spacing;
+    }
+}
+
+// type 1
+.type1-wrapper {
+    // 上方 默认就是 type 1 的
+    position: relative;
+}
+
+// type 2
+.type2-wrapper {
+    margin-bottom: @basic-spacing;
+
+    .head {
+        padding: 0;
+        border-bottom: 0;
+        height: 60px;
+
+        .title {
+            font-weight: normal;
+        }
+
+        .tab-title {
+            height: 32px;
+        }
+    }
+
+    .filter-wrapper {
+        margin: 0;
+
+        &.show {
+            margin: 0 0 @basic-spacing 0;
+        }
+    }
+
+    .middle {
+        margin: 0;
+
+        &.show {
+            margin: 0 0 @basic-spacing 0;
+        }
+    }
+
+    .content {
+        margin: 0;
+    }
+}
+
+// type 4
+.type4-wrapper {
+    .head {
+        padding: 0;
+        border-bottom: 0;
+        height: auto;
+        margin-bottom: @basic-spacing;
+
+        .title {
+            font-weight: normal;
+        }
+    }
+
+    .filter-wrapper {
+        margin: 0;
+
+        &.show {
+            margin: 0 0 @basic-spacing 0;
+        }
+    }
+
+    .middle {
+        margin: 0;
+
+        &.show {
+            margin: 0 0 @basic-spacing 0;
+        }
+    }
+
+    .content {
+        margin: 0;
+    }
+}
+
+// 新增headerinfo情况
+.header-info-wrapper {
+    padding: @basic-spacing 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+}
+
+.header-info {
+    flex-grow: 1;
+    width: 1px;
+}

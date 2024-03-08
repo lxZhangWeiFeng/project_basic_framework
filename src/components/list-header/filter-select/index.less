@@ -1,0 +1,60 @@
+.filter {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: border-color 0.3s, box-shadow 0.3s;
+
+    &:hover {
+        border-color: #40a9ff;
+    }
+
+    &.focus {
+        border-color: #40a9ff;
+        box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+    }
+}
+
+.filter-label {
+    white-space: nowrap;
+    display: inline-block;
+    padding: 5px 0 5px 10px;
+}
+
+.filter-select {
+    flex-grow: 1;
+    min-width: 0;
+}
+
+.max-count-tooltip {
+    white-space: pre-wrap;
+    max-height: 70vh;
+    overflow: auto;
+
+    .max-count-item {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+.select-flex-option {
+    display: flex;
+    align-items: center;
+}
+
+.loading {
+    height: 100px;
+    display: flex;
+    text-align: center;
+    background-color: transparent !important;
+    align-items: center;
+    justify-content: center;
+
+    :global {
+        .ant-spin-text {
+            margin-top: 8px;
+        }
+    }
+}

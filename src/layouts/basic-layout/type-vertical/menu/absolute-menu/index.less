@@ -1,0 +1,69 @@
+@import '~@/theme';
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.absolute-menu {
+    pointer-events: initial;
+    border-radius: 4px;
+    width: 168px;
+    position: absolute;
+    top: -15px;
+    left: 100%;
+    transform-origin: 0 0;
+    transition: transform 0.3s, opacity 0.3s;
+    display: none;
+    padding: 0 0 0 8px;
+    background-color: transparent;
+
+    &.enter {
+        display: block;
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    &.enter-active {
+        display: block;
+        transform: scale(1);
+        opacity: 1;
+        transition: all 0.3s;
+    }
+
+    &.enter-done {
+        display: block;
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    &.exit {
+        display: block;
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    &.exit-active {
+        display: block;
+        transform: scale(0.8);
+        opacity: 0;
+        transition: all 0.3s;
+    }
+
+    &.exit-done {
+        transform: scale(0.8);
+        opacity: 0;
+        display: none;
+    }
+
+    .absolute-inner {
+        border-radius: 4px;
+        background-color: #fff;
+        background-image: @primary-linear-color;
+        box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014, 0 9px 28px 8px #0000000d;
+    }
+}

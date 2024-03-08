@@ -1,0 +1,38 @@
+.wrapper {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.1s;
+
+    &.show {
+        height: 50px;
+    }
+
+    .icon-box {
+        height: 40px;
+        background: #f7fcff;
+        border: 1px solid #94d4ff;
+        border-radius: 2px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        padding: 0 15px;
+
+        & > * + * {
+            margin-left: 10px;
+        }
+
+        .notice {
+            color: #41a6fc;
+            cursor: pointer;
+        }
+        .number {
+            color: #41a6fc;
+            padding: 0 3px;
+        }
+        .divider {
+            width: 1px;
+            height: 14px;
+            background: #e9e9e9;
+        }
+    }
+}

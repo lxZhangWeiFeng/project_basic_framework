@@ -1,0 +1,55 @@
+image: 10.1.6.8:8081/tcsec_node:14.17.1-alpine.1
+
+# 环境
+variables:
+    DEVSERVER_78: 'root@192.168.2.78'
+    DEVSERVER_140: 'root@192.168.2.140'
+    DEVSERVER_156: 'root@192.168.2.156'
+
+before_script:
+    - eval $(ssh-agent -s)
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+    - echo "$STAGING_PRIVATE_KEY" | ssh-add -
+
+# tag
+stage_deploy_tag:
+    only:
+        - tags
+    artifacts:
+        paths:
+            - dist/
+    script:
+        - 'node -v'
+        - 'npm -v'
+        - 'yarn -v'
+        - 'yarn config get registry'
+        - 'yarn'
+        - 'yarn build'
+# 0.1
+
+stage_deploy_dev1:
+    only:
+        - v2.11.x
+    script:
+        - 'node -v'
+        - 'npm -v'
+        - 'yarn -v'
+        - 'yarn config get registry'
+        - 'yarn'
+        - 'yarn build'
+
+        # - ssh -p22 ${DEVSERVER_156} "rm -rf /var/lib/docker/volumes/docker-build_sca-nginx-volumes/_data/nginx/html/*"
+        # - ssh -p22 ${DEVSERVER_140} "rm -rf /var/lib/docker/volumes/docker-build_sca-nginx-volumes/_data/nginx/html/*"
+        - ssh -p22 ${DEVSERVER_78} "rm -rf /var/lib/docker/volumes/docker-build_sca-nginx-volumes/_data/nginx/html/*"
+
+        # - scp -r dist/* ${DEVSERVER_156}:/var/lib/docker/volumes/docker-build_sca-nginx-volumes/_data/nginx/html/
+        # - scp -r dist/* ${DEVSERVER_140}:/var/lib/docker/volumes/docker-build_sca-nginx-volumes/_data/nginx/html/
+        - scp -r dist/* ${DEVSERVER_78}:/var/lib/docker/volumes/docker-build_sca-nginx-volumes/_data/nginx/html/
+
+        # - ssh -p22 ${DEVSERVER_156} "chown -R 1000:root /var/lib/docker/volumes/docker-build_sca-nginx-volumes/_data/"
+        # - ssh -p22 ${DEVSERVER_140} "chown -R 1000:root /var/lib/docker/volumes/docker-build_sca-nginx-volumes/_data/"
+        - ssh -p22 ${DEVSERVER_78} "chown -R 1000:root /var/lib/docker/volumes/docker-build_sca-nginx-volumes/_data/"
+
+        # - ssh -p22 ${DEVSERVER_156} "cd /root/docker-build && docker-compose restart sca-nginx"
+        # - ssh -p22 ${DEVSERVER_140} "cd /root/docker-build && docker-compose restart sca-nginx"
+        - ssh -p22 ${DEVSERVER_78} "cd /root/docker-build && docker-compose restart sca-nginx"

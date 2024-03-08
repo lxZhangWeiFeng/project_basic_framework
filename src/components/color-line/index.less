@@ -1,0 +1,59 @@
+.wrapper {
+    height: 32px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    line-height: 32px;
+    border-radius: 6px;
+    overflow: hidden;
+
+    &.progress {
+        height: 10px;
+    }
+
+    &.justify-content-left {
+        justify-content: left;
+    }
+    &.justify-content-center {
+        justify-content: center;
+    }
+    &.justify-content-right {
+        justify-content: right;
+    }
+
+    .item {
+        flex-grow: 0;
+        // flex-shrink: 0;
+        height: 100%;
+        text-align: center;
+        color: #fff;
+        white-space: nowrap;
+        min-width: 20px;
+        padding: 0 5px;
+    }
+
+    .block + .block {
+        //! 去掉看效果
+        // margin-left: 10px;
+    }
+
+    .progress-block {
+        margin-right: 1px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.top-wrapper {
+    display: flex;
+    align-items: center;
+}
+.dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-right: 4px;
+}

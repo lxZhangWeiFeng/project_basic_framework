@@ -1,0 +1,51 @@
+.table {
+    :global {
+        .ant-table-pagination.ant-pagination {
+            margin-bottom: 0;
+        }
+
+        .ant-table-cell {
+            // padding: 10px 16px !important;
+            padding: 8px !important;
+        }
+
+        .ant-table-column-sorters {
+            padding: 0;
+        }
+
+        .ant-table-thead > tr > th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
+            opacity: 0;
+        }
+
+        .ant-pagination-total-text {
+            order: 9999; // 修改位置
+            margin: 0 0 0 16px;
+        }
+
+        th.ant-table-cell {
+            white-space: nowrap;
+        }
+
+        td.ant-table-cell {
+            word-break: break-all;
+        }
+
+        .ant-table-expanded-row {
+            .ant-table {
+                margin: 0 -16px 0 33px !important;
+            }
+        }
+        .ant-table-cell-ellipsis {
+            overflow: inherit;
+            white-space: normal;
+        }
+    }
+}
+
+.odd-row {
+    background-color: #fff;
+}
+
+.even-row {
+    background-color: #fafafa;
+}

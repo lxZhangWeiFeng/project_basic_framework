@@ -1,0 +1,41 @@
+@import '../filter-select/index.less';
+
+.filter {
+    .filter();
+    width: 450px;
+}
+
+.panel-render {
+    display: flex;
+
+    .btn-box {
+        vertical-align: top;
+        height: 270px;
+        display: inline-flex;
+        flex-direction: column;
+        padding: 0;
+        border-right: 1px solid #f0f0f0;
+        border-bottom: 1px solid #f0f0f0;
+
+        &::before {
+            content: '';
+            position: relative;
+            height: 40px;
+            box-sizing: content-box;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        button {
+            margin: 5px 5px 0 5px;
+        }
+    }
+
+    .panel-node {
+        display: inline-block;
+        vertical-align: top;
+
+        & > div {
+            white-space: nowrap;
+        }
+    }
+}

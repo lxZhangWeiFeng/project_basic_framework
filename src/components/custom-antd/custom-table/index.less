@@ -1,0 +1,69 @@
+.row-wrapper {
+    display: flex;
+    position: relative;
+    align-items: baseline;
+    margin: 0 0 16px 0;
+    padding: 16px;
+    font-size: 13px;
+    // background: #fafafa;
+    // box-shadow: 0 1px 3px 0 #00000040;
+    // border-color: #f7f7f7;
+    // border-style: solid;
+    // border-width: 0;
+    // border-radius: 2px;
+    background: #fafafa;
+    box-shadow: 0px 9px 27px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 1px solid transparent;
+
+    &:last-child {
+        margin: 0;
+    }
+
+    &.row-checked {
+        border-color: #94d4ff;
+        background: #f7fcff;
+    }
+}
+
+.table-content {
+    width: 100%;
+}
+
+.check-box {
+    margin-right: 12px;
+}
+
+.pagination {
+    margin-top: 12px;
+    // display: flex;
+    // justify-content: flex-end;
+}
+
+.show-total {
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    padding: 0 10px;
+    margin-left: 16px;
+}
+
+.reset-pagination {
+    display: flex;
+    justify-content: flex-end;
+
+    :global {
+        .ant-pagination-total-text {
+            order: 9999;
+        }
+    }
+}
+
+// reset 部分
+
+.reset {
+    :global {
+        .ant-ribbon {
+            top: -8px;
+        }
+    }
+}

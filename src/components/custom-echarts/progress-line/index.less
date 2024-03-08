@@ -1,0 +1,39 @@
+@import '~@/theme';
+
+.info {
+    display: flex;
+    margin-bottom: 6px;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    font-family: @font-family-PuHuiTi-Regular;
+    font-weight: 400;
+    color: #000;
+}
+
+.text {
+    flex-grow: 1;
+    width: 1px;
+    margin-right: 16px;
+}
+
+.number {
+    flex-shrink: 0;
+}
+
+.progress {
+    height: 10px;
+    width: 100%;
+    position: relative;
+    border-radius: 10px;
+}
+
+.progress-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 10px;
+    border-radius: 10px;
+    background: linear-gradient(270deg, #2c75f5 0%, #5997f3 56%, #94c4f0 100%);
+    // border: 1px solid #2e77f5;
+}
